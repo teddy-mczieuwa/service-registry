@@ -22,7 +22,7 @@ This is the introduction to setting up a microservice in node.js
 - the rest is to handle the error
 - return service
 
-## index.js
+# index.js
 This is the entry point
 - require http, config, service
 - config is an object so the property is obtained as such: ```js require('./config')[process.env.NODE_ENV || 'development'] ```
@@ -32,3 +32,7 @@ This is the entry point
 - listen on port
 - on listening, log (using log.info()) server.address().port and ```js service.get('env')```
 
+### Endpoint Setup
+These are the enpoints in which a service uses to register itself. They are setup in the service.js file since they require express ``` put, delete, get``` etc.
+They follow the signature: ```serviceroute/:servicename/:serviceversion/:serviceport```
+Getting a service does not require the serviceport so it is usually omitted.

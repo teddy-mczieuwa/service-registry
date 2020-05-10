@@ -10,6 +10,19 @@ module.exports = config => {
         })
     }
 
+    service.put('register/:servicename/:serviceversion/:serviceport',(req, res, next) => {
+        return next('not implemented')
+    })
+
+    service.delete('register/:servicename/:serviceversion/:serviceport',(req, res, next) => {
+        return next('not implemented')
+    })
+
+    service.find('register/:servicename/:serviceversion',(req, res, next) => {
+        return next('not implemented')
+    })
+
+
     service.use((error, req, res, next) => {
         res.status(error.status || 500)
 
